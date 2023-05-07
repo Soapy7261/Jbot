@@ -123,4 +123,4 @@ async def on_message(message):
         
         await handle_command(command, args, message)
 
-client.run('MTEwNDQ5MjQ2MjA1NzIwOTg5Nw.GrX7Rz.pCbuRFRcrGRflnz2Gp-Kk1DaAvX8uDs7xKFrvc')
+client.run('<API-KEY-HERE>')
