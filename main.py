@@ -24,7 +24,7 @@ async def update_notifications():
     next_jam_time = datetime.strptime(jinf["start_date"], '%m-%d-%Y').timestamp()
     for user in users["users"]:
         uinf = users["users"][user]
-        if is_less_than_24h_away(datetime.fromtimestamp(next_jam_time)) and time.time() - uinf["last_notification_time"] >= 86400:
+        if is_less_than_24h_away(datetime.fromtimestamp(next_jam_time)) and time.time() - uinf["last_notification_time"] >= 86400 and jinf["active"]:
             add_or_config_user(user, {
                 "num_jams": uinf["num_jams"],
                 "date_joined": uinf["date_joined"],
