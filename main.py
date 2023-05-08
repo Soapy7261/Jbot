@@ -79,7 +79,8 @@ async def handle_command(command, arguments, message):
         else:
             add_or_config_user(str(message.author), {
                 "num_jams": 0,
-                "date_joined": time.strftime("%m-%d-%Y")
+                "date_joined": time.strftime("%m-%d-%Y"),
+                "last_notification_time": 0
             })
             print(await add_role(message.author.id, "Homies Scratch Jam participant", client.guilds[0]))
             await reply(message, "You are now signed up for notifications about game jams!")
