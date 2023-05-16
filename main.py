@@ -33,7 +33,7 @@ async def update_notifications():
             print(user)
             print(await send_dm(user, f"{jinf['name']} starts in 24 hours!"))
 
-@client.event
+@client.listen()
 async def on_ready():
     print(f'We have logged in as {client.user}')
     update_notifications.start()
@@ -101,7 +101,7 @@ async def handle_command(command, arguments, message):
     
     else:
         await reply(message, f"Command not found: `{command}`")
-@client.event
+@client.listen()
 async def on_message(message):
     if message.author == client.user:
         return
